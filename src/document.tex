@@ -4,17 +4,26 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage[table]{xcolor}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{csquotes}
 \usepackage{hyperref}
-\usepackage{glossaries}
+\usepackage[acronym]{glossaries}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage[backend=biber,style=phys]{biblatex}
+
+\addbibresource{bibliography.bib}
 
 \include{sections/macros}
+
+\setacronymstyle{short-long}
+\makenoidxglossaries
+
+\include{sections/acronyms}
 
 \begin{document}
 
@@ -42,6 +51,10 @@
 
 \newpage
 
+\printnoidxglossary[type=\acronymtype]
+
+\newpage
+
 \tableofcontents
 
 \newpage
@@ -49,5 +62,10 @@
 \include{sections/introduction}
 
 \include{sections/formulas}
+
+\newpage
+
+\medskip
+\printbibliography
 
 \end{document}
