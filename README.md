@@ -4,32 +4,44 @@
   </a>
 </p>
 
-<h1 align="center">Advanced Systems LaTeX Template</h1>
+<h1 align="center">Advanced Systems Article Template</h1>
+
+## About
 
 This is a template repository for comprehensive LaTeX documents using the `article`
 class. It features a glossary for acronyms and a bibliography. Additionally, the
-sample sections __Introduction__ and __Formulas__ also provide code snippets for
+sample sections *Introduction* and *Formulas* also provide code snippets for
 embedding images, using tables or writing equations.
 
-## Setup
+## Customize
 
-It is strongly recommended to use VS Code and the LaTeX Workshop extension to
-build this document for better ease of usage. The title page is defined in `src/document.tex`
-where the following modifications should be made:
+Edit title, author and logo in `src/document.tex`. This template is broken down
+into sections. Similarly, you may also make changes
+to the following lines: 
 
-- Replace the header, logo and author name
-- Edit the abstract
-
-## Project Structure
-
-The main document (`document.tex`) is stored `src` and includes the following files:
-
+- `src/sections/`
 - `src/acronyms.tex`
 - `src/bibliography.bib`
-- `src/macros.tex`
-- `src/section/introduction.tex`
-- `src/section/formulas.tex`
 
-Rename and edit the last two files in this list as required. To reduce the overall
-build time, comment out unused section files. Place custom images in `src/images`,
-and include their content in `document.tex` to preview the pages.
+## Compile
+
+This example uses Advanced Systems' [Math Macros](https://github.com/Advanced-Systems/mathmacros); while this package is in development, it
+is recommended to pull it in as a git submodule:
+
+```
+git submodule update --init --recursive
+```
+
+Both TeX Live and MikTeX come with `latexmk`, though since this is a
+perl script you need to have perl installed on your system to run
+this command. Alternatively, use the `pdflatex` command.
+
+```
+latexmk src/document.tex -outdir=build -pdf
+```
+
+## Clear Cache
+
+```
+latexmk -C -outdir=build
+```
