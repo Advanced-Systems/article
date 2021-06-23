@@ -17,7 +17,7 @@ embedding images, using tables or writing equations.
 
 Edit title, author and logo in `src/document.tex`. This template is broken down
 into sections. Similarly, you may also make changes
-to the following lines: 
+to the following lines:
 
 - `src/sections/`
 - `src/acronyms.tex`
@@ -25,10 +25,10 @@ to the following lines:
 
 ## Compile
 
-This example uses Advanced Systems' [Math Macros](https://github.com/Advanced-Systems/mathmacros); while this package is in development, it
-is recommended to pull it in as a git submodule:
+This example uses Advanced Systems' [Math Macros](https://github.com/Advanced-Systems/mathmacros);
+while this package is in development, it is recommended to pull it in as a git submodule:
 
-```
+```cli
 git submodule update --init --recursive
 ```
 
@@ -36,12 +36,12 @@ Both TeX Live and MikTeX come with `latexmk`, though since this is a
 perl script you need to have perl installed on your system to run
 this command. Alternatively, use the `pdflatex` command.
 
-```
+```cli
 latexmk src/document.tex -outdir=build -pdf
 ```
 
 ## Clear Cache
 
-```
+```cli
 latexmk -C -outdir=build
 ```
