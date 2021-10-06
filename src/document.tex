@@ -4,12 +4,14 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{csquotes}
 \usepackage{hyperref}
+\usepackage{lipsum}
 \usepackage[acronym]{glossaries}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,6 +19,19 @@
 \usepackage{mathtools}
 \usepackage{mathmacros/mathmacros}
 \usepackage[backend=biber,style=phys]{biblatex}
+
+% variables
+\newcommand*{\dauthor}{FirstName LastName}
+\newcommand*{\dorg}{Advanced Systems}
+\newcommand*{\dtitle}{Article Title}
+\newcommand*{\dversion}{v0.0.1}
+
+% header
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\dtitle}
+\rhead{\texttt{\dversion}}
+\cfoot{Page \thepage}
 
 % misc macros
 \newcommand*{\pref}[2]{#1 (\ref{#2})}
@@ -36,23 +51,18 @@
 
 \begin{titlepage}
     \centering
-    {\scshape\Huge \bfseries{Advanced Systems} \par}
+    {\scshape\Huge\bfseries{\dorg}\par}
     \par\vspace{1cm}
     \includegraphics[width=0.45\textwidth]{images/logo.png}\par
     \vspace{3cm}
-    {\huge\bfseries Article Title \par}
+    {\huge\bfseries\dtitle\par}
     \vspace{1cm}
-    {\LARGE\itshape Author \par}
+    {\LARGE\itshape\dauthor\par}
     \vspace{1cm}
     {\large\today\par}
     \vfill
     \begin{abstract}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut
-        mollis nisl. Quisque eu justo sed risus consectetur ullamcorper. Maecenas
-        at commodo mauris. Nunc id viverra mi. Suspendisse vel lacus in nisi luctus
-        mattis non et eros. Duis nisi lectus, mattis nec nunc vel, consequat iaculis
-        orci. Vestibulum faucibus est efficitur ipsum pellentesque, ut faucibus
-        nisi rutrum.
+        \lipsum[2-4][12-18]
     \end{abstract}
 \end{titlepage}
 
